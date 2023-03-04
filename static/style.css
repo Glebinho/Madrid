@@ -1,0 +1,25 @@
+#about {
+    margin-top: 10px;
+    background-color: #EAEDED;
+    border-radius: 30px;
+    color: #17202A;
+    padding: 10px;
+  }
+  #main-content {
+    text-align:center;
+    margin-top: 10px;
+    background-color: #EAEDED;
+    border-radius: 20px;
+    color: #17202A; 
+    padding: 5px;
+  }
+  #newsflash {
+    color: #154360;
+    text-align: center;
+  }
+
+  #foo1 {
+    padding-top: 5px;
+    color: white;
+    padding-bottom: 5px;
+  }
