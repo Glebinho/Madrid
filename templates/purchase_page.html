@@ -1,28 +1,74 @@
-{% extends 'base.html' %} 
-{% block title %} About us | 
-{% endblock title %} 
+{% include 'base.html' %}
 
-{% block content%}
-<div class="container-fluid px-0">
-  <image src="static/modric.png" class="d-block w-100"></image>
-</div>
-<div class="container" id="about">
-  <div class="jumbotron jumbotron-fluid">
-    <div class="container my-5">
-      <h1 class="display-4 text-center">About Us</h1>
-      <p class="lead my-2">
-        We are the largest Real Madrid fan page in the world. We try our
-        best to increase the number of fans throughout the globe by providing
-        the latest news and updates about the club. We also upload pictures of
-        the latest jerseys every season.<br /><br />
+{% block title %}
+{% endblock %}
 
-        Fans are free to ask any questions regarding the club, and we will try
-        our best to answer those questions through email. Supporters may also
-        sign up and create accounts to show their support for the club.
-      </p>
-    </div>
-  </div>
+{% block content %}
+<div class="feature">
+<h1>Заполните данные</h1>
+
+ <form method="POST" action="{% url 'purchase_page' %}">
+{% csrf_token %}
+{{ form.as_p }}
+     {%if user.is_authenticated %}
+     <button type="submit" class="btn btn-info">Завершить заказ</button>
+     {% endif %}
+ </form>
 </div>
+<style>
+    .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+p{
+color:white;
+}
+.feature {
+    background-image: url('static/real_madrid.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-color: #D3D3D3;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+form {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+}
+</style>
 <div class="footer">
         <p class="footer-text-left">
             Real Madrid © 2024 All rights reserved
@@ -95,4 +141,5 @@
     right: 120px;
 }
 </style>
-{% endblock content %}
+{% endblock %}
+

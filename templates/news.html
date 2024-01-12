@@ -4,52 +4,44 @@
 Breaking News |
 {% endblock title %}
 
-{% block body %}
+{% block content %}
 
 <div class="container-fluid px-0">
-    <img src="static/logo1.jpg" class="d-block w-100"></img>
+    <img src="static/10.png" class="d-block w-100"></img>
 </div>
 
 <div id="main-content" class="container my-10 mx-10">
     <div class="jumbotron">
         <h3 class="display-4" id="newsflash">News Flash</h3>
         <hr class="my-4">
-        <strong>Diego Simeone set for historic achievement ahead of Atletico Madrid ve Sevilla<strong><br /><br />
+        <strong>Carlo Anchelloti set for historic achievement ahead of Real Madrid<strong><br /><br />
                 <p class="lead">
                     <a class="btn btn-success btn-sm"
-                        href="https://madriduniversal.com/diego-simeone-set-for-historic-achievement-ahead-of-atletico-madrid-ve-sevilla/"
+                        href="https://www.sports.ru/tribuna/blogs/rmadrid/3083358.html"
                         role="button">Learn more</a>
                 </p>
 
                 <hr class="my-4">
-        <strong>Atletico Madrid target to leave Liverpool in 2023<strong><br /><br />
+        <strong>Liverpool’s Andy Robertson becomes Real Madrid target as they search for new left-back<strong><br /><br />
                 <p class="lead">
                     <a class="btn btn-success btn-sm"
-                        href="https://www.football-espana.net/2023/03/03/atletico-madrid-target-liverpool-2023"
+                        href="https://metro.co.uk/2023/05/24/liverpools-andy-robertson-becomes-real-madrid-target-as-they-search-for-new-left-back-18834335"
                         role="button">Learn more</a>
                 </p>
 
                 <hr class="my-4">
-        <strong>Newcastle transfer news: Atletico Madrid reluctant to sign £10.5m target<strong><br /><br />
+        <strong>Real Madrid to rival Barcelona for Lautaro Martinez<strong><br /><br />
                 <p class="lead">
                     <a class="btn btn-success btn-sm"
-                        href="https://www.hitc.com/en-gb/2023/03/02/newcastle-transfer-news-atletico-madrid-reluctant-to-sign-10-5m-target/"
+                        href="https://www.espn.com/soccer/story/_/id/39288638/barcelona-try-dominate-real-madrid-supercoppa-final-xavi"
                         role="button">Learn more</a>
                 </p>
 
                 <hr class="my-4">
-        <strong>Atletico Madrid to rival Barcelona for Inigo Martinez<strong><br /><br />
+        <strong>Mbappe ignites Real Madrid move as PSG boss makes SHOCK admission<strong><br /><br />
                 <p class="lead">
                     <a class="btn btn-success btn-sm"
-                        href="https://www.sportsmole.co.uk/football/barcelona/transfer-talk/news/atletico-madrid-to-rival-barcelona-for-inigo-martinez_508156.html"
-                        role="button">Learn more</a>
-                </p>
-
-                <hr class="my-4">
-        <strong>Antoine Griezmann makes startling admission on Atletico Madrid return – ‘I deserved it’<strong><br /><br />
-                <p class="lead">
-                    <a class="btn btn-success btn-sm"
-                        href="https://www.football-espana.net/2023/03/01/antoine-griezmann-makes-startling-admission-on-atletico-madrid-return-i-deserved-it"
+                        href="https://www.footballtransfers.com/en/transfer-news/es-la-liga/2023/12/kylian-mbappe-transfer-news-real-madrid-hopes-ignited-as-psg-boss-makes-shock-admission"
                         role="button">Learn more</a>
                 </p>
 
@@ -62,4 +54,76 @@ Breaking News |
                 </p>
     </div>
 </div>
-{% endblock body %}
+<div class="footer">
+        <p class="footer-text-left">
+            Real Madrid © 2024 All rights reserved
+        </p>
+        <ul class="footer-text-right">
+            <a class="fly" href="https://www.emirates.com/es/spanish/" style="text-decoration: none;"><li>Fly Emirates</li></a>
+            <a class="adid" href="https://www.adidas.co.uk/" style="text-decoration: none;"><li>Adidas</li></a>
+            <a class="yt" href="https://www.youtube.com/realmadrid" style="text-decoration: none;"><li>YouTube</li></a>
+        </ul>
+    </div>
+<style>
+  .footer-text{
+    color: gray;
+    font-size: 15px;
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+.footer-text.i{
+    padding-bottom:15px;
+}
+.ticket{
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+.footer{
+    height: 60px;
+    background-color: lightgray;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text-left{
+    font-size: 10px;
+    color:white;
+    font-weight: 400;
+    line-height: 20px;
+    display: contents;
+}
+.footer-text-right {
+    display: contents;
+}
+.fly{
+    font-size: 10px;
+    color: white;
+    font-weight: 400;
+    line-height: 20px;
+    list-style: none;
+    position: relative;
+    left: 120px;
+}
+.adid{
+    font-size: 10px;
+    color: white;
+    font-weight: 400;
+    line-height: 20px;
+    list-style: none;
+    position: relative;
+}
+.yt{
+    font-size: 10px;
+    color: white;
+    font-weight: 400;
+    line-height: 20px;
+    list-style: none;
+    position: relative;
+    right: 120px;
+}
+</style>
+{% endblock content %}

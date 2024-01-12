@@ -4,7 +4,7 @@
 Contact | 
 {% endblock title %}
 
-{% block body %}
+{% block content %}
 <div class="container-fluid px-0"> <!--container-fluid extends the width of an image to fit into the whole width of the window--> <!--px stands for padding in x axis-->
     <img src="/static/telephone.jpg" class="d-block w-100"> <!--my stands for margin y axis-->
 </div>
@@ -39,4 +39,76 @@ Contact |
 <div>
 &nbsp;
 </div>
-{% endblock body %}
+<div class="footer">
+        <p class="footer-text-left">
+            Real Madrid © 2024 All rights reserved
+        </p>
+        <ul class="footer-text-right">
+            <a class="fly" href="https://www.emirates.com/es/spanish/" style="text-decoration: none;"><li>Fly Emirates</li></a>
+            <a class="adid" href="https://www.adidas.co.uk/" style="text-decoration: none;"><li>Adidas</li></a>
+            <a class="yt" href="https://www.youtube.com/realmadrid" style="text-decoration: none;"><li>YouTube</li></a>
+        </ul>
+    </div>
+<style>
+  .footer-text{
+    color: gray;
+    font-size: 15px;
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+.footer-text.i{
+    padding-bottom:15px;
+}
+.ticket{
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+.footer{
+    height: 60px;
+    background-color: lightgray;
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-text-left{
+    font-size: 10px;
+    color:white;
+    font-weight: 400;
+    line-height: 20px;
+    display: contents;
+}
+.footer-text-right {
+    display: contents;
+}
+.fly{
+    font-size: 10px;
+    color: white;
+    font-weight: 400;
+    line-height: 20px;
+    list-style: none;
+    position: relative;
+    left: 120px;
+}
+.adid{
+    font-size: 10px;
+    color: white;
+    font-weight: 400;
+    line-height: 20px;
+    list-style: none;
+    position: relative;
+}
+.yt{
+    font-size: 10px;
+    color: white;
+    font-weight: 400;
+    line-height: 20px;
+    list-style: none;
+    position: relative;
+    right: 120px;
+}
+</style>
+{% endblock content %}

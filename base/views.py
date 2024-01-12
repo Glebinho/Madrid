@@ -1,16 +1,20 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from datetime import datetime
-from base.models import Contact
+
+from base.forms import HistForm
+from base.models import Contact, History
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from base.models import Shape
 
 # Create your views here.
 def index(request):
+    stan = Shape.objects.all()
     #return HttpResponse("This is the home page.")
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'stan':stan})
 
 def aboutUs(request):
     return render(request, 'about_us.html')
@@ -79,7 +83,38 @@ def handle_logout(request):
     return redirect('/')
 
 def news(request):
-    
     return render(request, 'news.html')
 
+def purchase_page(request):
+    error = ''
+    if request.method == 'POST':
+        form = HistForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # После сохранения нового заказа, обновите список заказов
+            orders = History.objects.all()
+            return render(request, 'purchase_page.html', {'form': form, 'orders': orders})  # Передача переменной orders в контекст
+        else:
+            error = 'ВАШ ЗАКАЗ БЫЛ ЗАПОЛНЕН НЕВЕРНО'
+    else:
+        form = HistForm()
+    orders = History.objects.all()
+    data = {
+        'form': form,
+        'orders': orders,
+        'error': error
+    }
 
+    return render(request, 'purchase_page.html', data)
+
+def lscab(request):
+    orders = History.objects.all()
+    data = {
+        'orders': orders
+    }
+    return render(request, 'lscab.html',data)
+def historyc(request):
+    return render(request, 'history.html')
+
+def pageNotFound(request,exception):
+    return HttpResponseNotFound("<h1>Страница не найдена</h1>")

@@ -1,0 +1,50 @@
+{% include 'base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+<style>
+    .user-list {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 20px;
+  background-color: #f9f9f9;
+}
+.order {
+  border: 1px solid black; /* задает черную границу толщиной 1 пиксель */
+  padding: 10px; /* добавляет отступ внутри рамки для текста */
+  margin-bottom: 10px; /* добавляет отступ между каждым заказом */
+}
+
+.user-list h3 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.user-list p {
+  margin-bottom: 5px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+}
+
+</style>
+<div class="user-list">
+<h3>Your orders</h3>
+    {%if user.is_authenticated %}
+{% for order in orders %}
+<p>Заказ: {{ order.tovar }} - {{ order.razmer }} - {{ order.kol }}</p>
+<p class="order">Email: {{ order.email }}</p>
+<p>Дата: {{ order.date }}</p>
+<p>Адрес: {{ order.text }}</p>
+<!-- Другая информация, связанная с заказом -->
+{% endfor %}
+    {% endif %}
+<hr>
+</div>
+{% endblock %}
